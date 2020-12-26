@@ -37,7 +37,7 @@ The UI screen will only observe changes coming from BLOC class.
 ------ models/
 - repositories/								#  global classes encapsulate the logic to access data sources, and shared across app.
 - models/										# contain common models  shared across the app
-----app_model.dart
+---- app_model.dart
 - datasources/									# Also understand is data storage layers, which are handle connect to difference data sources
 - main.dart
 ```
