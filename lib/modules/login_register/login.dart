@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/config/palette.dart';
+import 'package:flutter_app/modules/login_register/widgets/button_with_icon.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({
@@ -20,7 +21,6 @@ class LoginScreen extends StatelessWidget {
             ShaderMask(
               shaderCallback: (rect) {
                 return LinearGradient(
-                  // begin: Alignment(-0.1, -0.15),
                   end: Alignment(1.5, 1.5),
                   stops: [0, 1],
                   colors: [
@@ -46,7 +46,6 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(28.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -144,53 +143,15 @@ class LoginScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                width: 140,
-                                child: RaisedButton.icon(
-                                  color: Colors.white,
-                                  padding: EdgeInsets.all(10),
-                                  onPressed: () => null,
-                                  icon: Image.asset(
-                                    "assets/facebook-icon.png",
-                                    width: 29,
-                                    height: 29,
-                                  ),
-                                  label: Text(
-                                    "Facebook".toUpperCase(),
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                ),
+                              ButtonWithIcon(
+                                asset: "assets/facebook-icon.png",
+                                label: "Facebook",
+                                onPressed: () => null,
                               ),
-                              Container(
-                                width: 140,
-                                child: RaisedButton.icon(
-                                  color: Colors.white,
-                                  padding: EdgeInsets.all(10),
-                                  onPressed: () => null,
-                                  icon: Image.asset(
-                                    "assets/google-icon.png",
-                                    width: 29,
-                                    height: 29,
-                                  ),
-                                  label: Text(
-                                    "Google".toUpperCase(),
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                ),
+                              ButtonWithIcon(
+                                asset: "assets/google-icon.png",
+                                label: "Google",
+                                onPressed: () => null,
                               ),
                             ],
                           ),
