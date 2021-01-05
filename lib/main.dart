@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_app/modules/login_register/login.dart';
 
 // import './modules/counter/blocs/counter_bloc.dart';
-import './modules/counter/counter_screen.dart';
-import 'modules/counter/blocs/counter_class_bloc.dart';
-
+import 'modules/main/main_screen.dart';
 
 void main() {
-  // AppSettings settings = AppSettings();
+  // AppSetting settings = AppSettings();
   // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
   //   .then((_) => runApp(MyApp(settings: settings)));
   runApp(MyApp());
@@ -17,15 +15,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: "Sofia Pro",
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BlocProvider<CounterBloc>(
-        create: (BuildContext context) => CounterBloc(0),
-        child: CounterScreen(title: 'Flutter Demo'),
-      ),
+      routes: {
+        '/main': (context) => MainScreen(title: "Home"),
+        '/': (context) => LoginScreen()
+      }
     );
   }
 }

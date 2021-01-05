@@ -10,6 +10,12 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext ctx) {
-    return Container();
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          child: Text("This is home"),
+        ),
+      ),
+    );
   }
 }
