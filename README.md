@@ -17,7 +17,6 @@ The UI screen will only observe changes coming from BLOC class.
 
 
 ### Detail architecture with multiple Providers
-![](./assets/diagram-1.png)
 
 
 ### Folders structure
