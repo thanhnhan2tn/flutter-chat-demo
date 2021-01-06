@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/config/palette.dart';
 
-class Circle extends CustomPainter  {
+class CircleStroke extends CustomPainter  {
+
   final _paint = Paint()
-    ..color = Palette.primaryColor
+    ..color = Color(0XFF2DBC48)
     ..strokeWidth = 2
     // Use [PaintingStyle.fill] if you want the circle to be filled.
     ..style = PaintingStyle.stroke;
@@ -11,7 +11,7 @@ class Circle extends CustomPainter  {
   @override
   void paint(Canvas canvas, Size size) {
     canvas.drawOval(
-      Rect.fromLTWH(0, 0, size.width, size.height),
+      Rect.fromCenter(center: Offset(size.width/2, size.width/2), width: 310, height: 310),
       _paint,
     );
   }

@@ -2,15 +2,20 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/config/palette.dart';
-import 'package:flutter_app/modules/login_register/widgets/button_with_icon.dart';
+import 'package:flutter_app/modules/login_register/widgets/button_with_image.dart';
+import 'package:flutter_app/widgets/paragraph_text.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({
     Key key,
-    this.title = 'Home',
+    this.title = 'Login',
   }) : super(key: key);
 
   final String title;
+
+  _onLogin(context) {
+    Navigator.pushNamed(context, '/on_board');
+  }
 
   @override
   Widget build(BuildContext ctx) {
@@ -98,12 +103,7 @@ class LoginScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Text(
-                      "Your favourite foods delivered fast at your door.",
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
+                    ParagraphText(text: "Your favourite foods delivered fast at your door."),
                     SizedBox(
                       height: 120,
                     ),
@@ -143,12 +143,12 @@ class LoginScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              ButtonWithIcon(
+                              ButtonWithImage(
                                 asset: "assets/facebook-icon.png",
                                 label: "Facebook",
                                 onPressed: () => null,
                               ),
-                              ButtonWithIcon(
+                              ButtonWithImage(
                                 asset: "assets/google-icon.png",
                                 label: "Google",
                                 onPressed: () => null,
@@ -199,7 +199,7 @@ class LoginScreen extends StatelessWidget {
                                     color: Colors.white,
                                   ),
                                 ),
-                                onTap: null,
+                                onTap: () => this._onLogin(ctx),
                               ),
                             ],
                           ),

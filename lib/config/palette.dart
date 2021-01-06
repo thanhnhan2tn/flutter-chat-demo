@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Palette {
   static Color primaryColor = Color(0xFFFE724C);
-  static Color accentColor =  Color(0xFFFE724C);
+  static Color accentColor =  Color(0xFFFFC529);
   static Color secondaryColor = Colors.black;
   static Color primaryTextColor = Colors.black;
   static Color secondaryTextColor = Colors.white;

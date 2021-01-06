@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ButtonWithIcon extends StatelessWidget {
+class ButtonWithImage extends StatelessWidget {
   final String asset;
   final String label;
   final onPressed;
 
-  ButtonWithIcon({this.asset, this.label, this.onPressed});
+  ButtonWithImage({this.asset, this.label, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -35,3 +35,4 @@ class ButtonWithIcon extends StatelessWidget {
     );
   }
 }
+ 
