@@ -148,6 +148,8 @@ class LoginScreen extends StatelessWidget {
                                 label: "Facebook",
                                 onPressed: () => null,
                               ),
+                              // Spacer(),
+                              SizedBox(width: 20),
                               ButtonWithIcon(
                                 asset: "assets/google-icon.png",
                                 label: "Google",
