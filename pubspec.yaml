@@ -26,6 +26,7 @@ dependencies:
   intl: ^0.16.1
   rubber: ^0.4.0
   flutter_bloc: ^6.1.1
+  carousel_slider: ^2.3.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,7 +66,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: "Sofia Pro"
+      fonts:
+        - asset: assets/fonts/sofiapro-light.otf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

@@ -5,11 +5,15 @@ import 'palette.dart';
 class Styles {
   static TextStyle textHeading = TextStyle(
     color: Palette.primaryTextColor,
-    fontSize: 20,
-  ); // Text style for the name
+    fontSize: 45,
+    fontWeight: FontWeight.bold,
+  );
   static TextStyle subHeading = TextStyle(
     color: Palette.primaryTextColor,
-    fontSize: 14,
+    fontSize: 36,
+  );
+  static TextStyle bodyText = TextStyle(
+    color: Palette.primaryTextColor,
   );
   static TextStyle text = TextStyle(
     color: Palette.secondaryTextColor,
