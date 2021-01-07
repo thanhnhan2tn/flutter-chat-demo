@@ -1,8 +1,8 @@
-gradle-wrapper.jar
+#gradle-wrapper.jar Enable CICD
 /.gradle
 /captures/
-/gradlew
-/gradlew.bat
+#/gradlew Enable CICD
+#/gradlew.bat Enable CICD
 /local.properties
 GeneratedPluginRegistrant.java
 
