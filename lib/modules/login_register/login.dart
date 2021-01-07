@@ -51,8 +51,8 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(28.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  // mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 100.0,
+                      height: MediaQuery.of(ctx).size.width / 4,
                     ),
                     Container(
                       child: Column(
@@ -105,7 +105,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     ParagraphText(text: "Your favourite foods delivered fast at your door."),
                     SizedBox(
-                      height: 120,
+                      height: MediaQuery.of(ctx).size.width / 8,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 22),
@@ -148,6 +148,7 @@ class LoginScreen extends StatelessWidget {
                                 label: "Facebook",
                                 onPressed: () => null,
                               ),
+                              SizedBox(width: 20),
                               ButtonWithImage(
                                 asset: "assets/google-icon.png",
                                 label: "Google",
