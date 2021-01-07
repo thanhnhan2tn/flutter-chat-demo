@@ -2,6 +2,8 @@
 
 A demo Flutter application.
 
+[![Build status](https://build.appcenter.ms/v0.1/apps/be344080-8d7c-41c1-9af3-886a84efbbd1/branches/cicd/badge)](https://appcenter.ms)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
