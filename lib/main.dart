@@ -7,9 +7,6 @@ import 'modules/counter/blocs/counter_class_bloc.dart';
 
 
 void main() {
-  // AppSettings settings = AppSettings();
-  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
-  //   .then((_) => runApp(MyApp(settings: settings)));
   runApp(MyApp());
 }
 
@@ -21,6 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'AvenirNextLT',
       ),
       home: BlocProvider<CounterBloc>(
         create: (BuildContext context) => CounterBloc(0),

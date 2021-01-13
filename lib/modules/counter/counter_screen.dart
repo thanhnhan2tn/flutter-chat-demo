@@ -3,7 +3,7 @@ import 'package:flutter_app/modules/counter/widgets/counter_number.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'blocs/counter_class_bloc.dart';
-
+import 'package:flutter_app/config/foodude_icons.dart';
 // import 'blocs/counter_bloc.dart';
 // import 'models/counter_event.dart';
 
@@ -81,7 +81,7 @@ class _CounterScreenState extends State<CounterScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => {},
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(FoodudeIcon.Bakery1),
       ),
     );
   }
