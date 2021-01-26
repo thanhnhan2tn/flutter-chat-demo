@@ -7,14 +7,15 @@ class CnFConversion extends StatefulWidget {
 }
 
 class _CnFConversionState extends State<CnFConversion> {
+  double theCValue;
   final fieldCCtrl = TextEditingController();
   final fieldFCtrl = TextEditingController();
-  // final _debounce = Debounce(milliseconds: 200);
 
   void initState() {
     super.initState();
-    // fieldCCtrl.addListener(onChangeWithC);
-    // fieldFCtrl.addListener(onChangeWithF);
+    theCValue = 0.0;
+    fieldCCtrl.text = theCValue.toString();
+    fieldFCtrl.text = convertWithName(theCValue, 'F').toString();
   }
 
   double convertWithName(number, [type = 'C']) {
@@ -26,57 +27,45 @@ class _CnFConversionState extends State<CnFConversion> {
     }
   }
 
-  void onChangeWithC() {
-    if (fieldCCtrl.text == '') {
+  void onChangeByName(TextEditingController ctrl, String name) {
+    if (ctrl.text == '') {
       return;
     }
-    print("C text field: ${fieldCCtrl.text}");
-    var input, toFValue;
+    var cValue;
     try {
-      input = double.parse(fieldCCtrl.text);
+      if (name == 'C') {
+        cValue = double.parse(ctrl.text);
+      } else {
+        cValue = convertWithName(ctrl.text, 'C');
+      }
     } catch (e) {
-      input = 0.0;
+      cValue = 0.0;
     }
-    toFValue = convertWithName(input, 'F').toStringAsFixed(1).replaceAll('.0', '');
     setState(() {
-      fieldFCtrl.value = TextEditingValue(
-        text: toFValue,
-        selection:
-            TextSelection.fromPosition(TextPosition(offset: toFValue.length)),
-      );
-    });
-  }
-
-  void onChangeWithF() {
-    if (fieldFCtrl.text == '') {
-      return;
-    }
-    print("F text field: ${fieldFCtrl.text}");
-    var input, toCValue;
-    try {
-      input = double.parse(fieldFCtrl.text);
-    } catch (e) {
-      input = 0.0;
-    }
-    toCValue = convertWithName(input).toString().replaceAll('.0', '');
-    setState(() {
-      fieldCCtrl.value = TextEditingValue(
-        text: toCValue,
-        selection:
-            TextSelection.fromPosition(TextPosition(offset: toCValue.length)),
-      );
+      theCValue = cValue;
     });
   }
 
   @override
   void dispose() {
+    super.dispose();
     fieldCCtrl.dispose();
     fieldFCtrl.dispose();
-    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    fieldCCtrl.value = TextEditingValue(
+      text: theCValue.toStringAsFixed(1).replaceAll('.0', ''),
+      selection:
+          TextSelection.fromPosition(TextPosition(offset: fieldCCtrl.text.length)),
+    );
+    fieldFCtrl.value = TextEditingValue(
+      text: convertWithName(theCValue, 'F').toStringAsFixed(1).replaceAll('.0', ''),
+      selection:
+          TextSelection.fromPosition(TextPosition(offset: fieldFCtrl.text.length)),
+    );
+
     return Container(
       padding: EdgeInsets.all(15.0),
       child: Row(
@@ -90,7 +79,7 @@ class _CnFConversionState extends State<CnFConversion> {
                 border: OutlineInputBorder(),
                 labelText: 'C',
               ),
-              onEditingComplete: onChangeWithC,
+              onEditingComplete: () => onChangeByName(fieldCCtrl, 'C'),
             ),
           ),
           Icon(Icons.compare_arrows),
@@ -102,7 +91,7 @@ class _CnFConversionState extends State<CnFConversion> {
                 border: OutlineInputBorder(),
                 labelText: 'F',
               ),
-              onEditingComplete: onChangeWithF,
+              onEditingComplete: () => onChangeByName(fieldCCtrl, 'F'),
             ),
           ),
         ],
